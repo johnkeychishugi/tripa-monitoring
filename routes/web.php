@@ -22,3 +22,10 @@ Route::get('/', function () {
 
     return view('dashboard',compact('images','networks','subnets','ports','servers'));
 });
+
+Route::get('/instance/{id}', function ($id) {
+
+    $interfaces = getAllServerInterface($id);
+
+    return view('instances.show',compact('interfaces'));
+})->name('server.show');
