@@ -165,6 +165,7 @@
                     <th>Availability zone</th>
                     <th>Security Group</th>
                     <th>Date of Creation</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -190,6 +191,9 @@
                             </ul>
                         </td>
                         <td>{{ $item['created'] }}</td>
+                        <td>
+                            <a type="button" class="btn btn-primary" href="{{ route('server.show',$item['id']) }}">Details</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
