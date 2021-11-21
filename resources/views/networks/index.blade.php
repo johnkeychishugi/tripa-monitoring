@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @php
+dd($networks);
 $networks = $networks['networks'];
 $subnets = $subnets['subnets'];
 $ports = $ports['ports'];

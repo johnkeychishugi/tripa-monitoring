@@ -38,7 +38,7 @@ function getAllNetworks()
     //Set your auth headers
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Content-Type: application/json',
-        'X-Auth-Token:' . env('TOKEN_REGION_ONE_REGION_ONE')
+        'X-Auth-Token:' . env('TOKEN_REGION_ONE')
     ));
 
     // get stringified data/output. See CURLOPT_RETURNTRANSFER
