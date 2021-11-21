@@ -19,9 +19,10 @@ Route::get('/', function () {
     $subnets = getAllSubnets();
     $ports = getAllPorts();
     $servers = getAllServers();
+    $limites = getAllLimitesOverview();
 
-    return view('dashboard',compact('images','networks','subnets','ports','servers'));
-});
+    return view('dashboard',compact('images','networks','subnets','ports','servers','limites'));
+})->name('home');
 
 Route::get('/instance/{id}', function ($id) {
 
