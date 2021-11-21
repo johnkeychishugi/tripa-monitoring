@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $limites = getAllLimitesOverview();
+    $limitesRegionOne = getAllLimitesOverviewRegionOne();
+    $limitesRegionTwo = getAllLimitesOverviewRegionTwo();
 
-    return view('overview',compact('limites'));
+    return view('overview',compact('limitesRegionOne','limitesRegionTwo'));
 })->name('home');
 
 Route::get('/instance/{id}', function ($id) {
