@@ -14,14 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $images = getAllImages();
-    $networks =getAllNetworks();
-    $subnets = getAllSubnets();
-    $ports = getAllPorts();
-    $servers = getAllServers();
     $limites = getAllLimitesOverview();
 
-    return view('dashboard',compact('images','networks','subnets','ports','servers','limites'));
+    return view('overview',compact('limites'));
 })->name('home');
 
 Route::get('/instance/{id}', function ($id) {
@@ -30,3 +25,27 @@ Route::get('/instance/{id}', function ($id) {
 
     return view('instances.show',compact('interfaces'));
 })->name('server.show');
+
+Route::get('/network', function () {
+    $subnets = getAllSubnets();
+    $ports = getAllPorts();
+    $networks =getAllNetworks();
+
+    return view('networks.index',compact('networks','subnets','ports'));
+
+})->name('network');
+
+Route::get('/instance', function () {
+    $servers = getAllServers();
+
+    return view('instances.index',compact('servers'));
+
+})->name('instance');
+
+
+Route::get('/image', function () {
+    $images = getAllImages();
+
+    return view('images.index',compact('images'));
+
+})->name('image');
