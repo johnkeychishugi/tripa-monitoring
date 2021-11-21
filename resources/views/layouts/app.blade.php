@@ -9,18 +9,6 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-        .nav-title {
-            color: #fff;
-            padding: 10px 10px 10px 12px;
-            font-size: 20px;
-        }
-
-        .brand-text {
-            color: #fff !important;
-            padding: 20px 10px 10px 12px !important;
-        }
-    </style>
     @yield('css')
 </head>
 
