@@ -205,3 +205,78 @@ function getAllLimitesOverviewRegionTwo()
     return  collect(json_decode($data, true));
 }
 
+function getAllAbsoluteStorage()
+{
+    //setup the request, you can also use CURLOPT_URL
+    $ch = curl_init('http://172.16.60.16:8776/v3/dffbba7da6d2472e84b755f389948b03/limits');
+
+    // Returns the data/output as a string instead of raw data
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    //Set your auth headers
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        'X-Auth-Token:' . env('TOKEN_REGION_ONE')
+    ));
+
+    // get stringified data/output. See CURLOPT_RETURNTRANSFER
+    $data = curl_exec($ch);
+
+    // get info about the request
+    $info = curl_getinfo($ch);
+    // close curl resource to free up system resources
+    curl_close($ch);
+
+    return  collect(json_decode($data, true));
+}
+
+
+function getAllExtensionStorage()
+{
+    //setup the request, you can also use CURLOPT_URL
+    $ch = curl_init('http://172.16.60.16:8776/v3/dffbba7da6d2472e84b755f389948b03/extensions');
+
+    // Returns the data/output as a string instead of raw data
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    //Set your auth headers
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        'X-Auth-Token:' . env('TOKEN_REGION_ONE')
+    ));
+
+    // get stringified data/output. See CURLOPT_RETURNTRANSFER
+    $data = curl_exec($ch);
+
+    // get info about the request
+    $info = curl_getinfo($ch);
+    // close curl resource to free up system resources
+    curl_close($ch);
+
+    return  collect(json_decode($data, true));
+}
+
+function getAllAlarms()
+{
+    //setup the request, you can also use CURLOPT_URL
+    $ch = curl_init('http://172.16.60.11:8042/v2/alarms');
+
+    // Returns the data/output as a string instead of raw data
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    //Set your auth headers
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        'X-Auth-Token:' . env('TOKEN_REGION_ONE')
+    ));
+
+    // get stringified data/output. See CURLOPT_RETURNTRANSFER
+    $data = curl_exec($ch);
+
+    // get info about the request
+    $info = curl_getinfo($ch);
+    // close curl resource to free up system resources
+    curl_close($ch);
+
+    return  collect(json_decode($data, true));
+}

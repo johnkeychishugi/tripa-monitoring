@@ -50,3 +50,29 @@ Route::get('/image', function () {
     return view('images.index',compact('images'));
 
 })->name('image');
+
+
+Route::get('/storage', function () {
+    $absoluteStorage = getAllAbsoluteStorage();
+    $extensionStorage = getAllExtensionStorage();
+    
+    return view('storages.index',compact('absoluteStorage','extensionStorage'));
+
+})->name('storage');
+
+
+Route::get('/alarm', function () {
+    $alarms = getAllAlarms();
+   
+    return view('problems.alarm',compact('alarms'));
+
+})->name('alarm');
+
+
+Route::get('/notification', function () {
+    $absoluteStorage = getAllAbsoluteStorage();
+    $extensionStorage = getAllExtensionStorage();
+    
+    return view('problems.notification',compact('absoluteStorage','extensionStorage'));
+
+})->name('notification');
