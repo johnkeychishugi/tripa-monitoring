@@ -8,10 +8,11 @@ $servers = $servers['servers'];
 @section('content')
 <div id="page-wrapper">
     <div class="container">
-        <h2>LIST INSTANCES #{{ count($servers) }}</h2>
+        <h2>LIST INSTANCES</h2>
         <table class="table">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>ID INSTANCE</th>
                     <th>Name</th>
                     <th>Status</th>
@@ -25,8 +26,9 @@ $servers = $servers['servers'];
                 </tr>
             </thead>
             <tbody>
-                @foreach ($servers as $item)
+                @foreach ($servers as $key => $item)
                 <tr>
+                    <td>{{ $key + 1 }}</td>
                     <td>{{ $item['id'] }}</td>
                     <td>{{ $item['name'] }}</td>
                     <td>{{ $item['status'] }}</td>
