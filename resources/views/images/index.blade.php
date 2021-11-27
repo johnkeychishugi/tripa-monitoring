@@ -8,10 +8,11 @@ $images = $images['images'];
 @section('content')
 <div id="page-wrapper">
     <div class="container">
-            <h2>LIST IMAGES #{{ count($images) }}</h2>
+            <h2>LIST IMAGES</h2>
             <table class="table">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Name</th>
                         <th>Disk Format</th>
                         <th>Architecture</th>
@@ -24,8 +25,9 @@ $images = $images['images'];
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($images as $item)
+                    @foreach ($images as $key => $item)
                     <tr>
+                        <td>{{ $key + 1 }}</td>
                         <td>{{ $item['name'] }}</td>
                         <td>{{ $item['disk_format'] }}</td>
                         <td>{{ $item['architecture'] }}</td>
