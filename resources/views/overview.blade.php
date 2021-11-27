@@ -426,7 +426,7 @@ if($ramDegRegionTwo <= 180){
 @section('content')
     <div id="page-wrapper">
         <div class="container">
-            <h2 class="region-title">REGION #1</h2>
+            <h2 class="region-title">REGION 1</h2>
             <div class="row">
                 <br><br>
                 <div class="col-md-3 col-sm-6 circle-box">
@@ -500,7 +500,7 @@ if($ramDegRegionTwo <= 180){
         </div>
         <hr class="separate-bar">
         <div class="container">
-            <h2 class="region-title">REGION #2</h2>
+            <h2 class="region-title">REGION 2</h2>
             <div class="row">
                 <br><br>
                 <div class="col-md-3 col-sm-6 circle-box">
