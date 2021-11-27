@@ -11,10 +11,11 @@ $ports = $ports['ports'];
 @section('content')
 <div id="page-wrapper">
     <div class="container">
-        <h2>LIST NETWORKS #{{ count($networks) }}</h2>
+        <h2>LIST NETWORKS</h2>
         <table class="table">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>ID Network</th>
                     <th>Name</th>
                     <th>Tenant ID</th>
@@ -26,8 +27,9 @@ $ports = $ports['ports'];
                 </tr>
             </thead>
             <tbody>
-                @foreach ($networks as $item)
+                @foreach ($networks as $key => $item)
                 <tr>
+                    <td>{{ $key + 1 }}</td>
                     <td>{{ $item['id'] }}</td>
                     <td>{{ $item['name'] }}</td>
                     <td>{{ $item['tenant_id'] }}</td>
@@ -41,10 +43,11 @@ $ports = $ports['ports'];
             </tbody>
         </table>
         <br>
-        <h2>LIST SUBNETS #{{ count($subnets) }}</h2>
+        <h2>LIST SUBNETS</h2>
         <table class="table">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>ID Subnet</th>
                     <th>Name</th>
                     <th>ID Network</th>
@@ -56,8 +59,9 @@ $ports = $ports['ports'];
                 </tr>
             </thead>
             <tbody>
-                @foreach ($subnets as $item)
+                @foreach ($subnets as $key => $item)
                 <tr>
+                    <td>{{ $key + 1 }}</td>
                     <td>{{ $item['id'] }}</td>
                     <td>{{ $item['name'] }}</td>
                     <td>{{ $item['network_id'] }}</td>
@@ -76,10 +80,11 @@ $ports = $ports['ports'];
             </tbody>
         </table>
         <br>
-        <h2>LIST PORTS #{{ count($ports) }}</h2>
+        <h2>LIST PORTS</h2>
         <table class="table">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>ID Port</th>
                     <th>ID Network</th>
                     <th>MAC Address</th>
@@ -91,8 +96,9 @@ $ports = $ports['ports'];
                 </tr>
             </thead>
             <tbody>
-                @foreach ($ports as $item)
+                @foreach ($ports as $key => $item)
                 <tr>
+                    <td>{{ $key + 1 }}</td>
                     <td>{{ $item['id'] }}</td>
                     <td>{{ $item['network_id'] }}</td>
                     <td>{{ $item['mac_address'] }}</td>
