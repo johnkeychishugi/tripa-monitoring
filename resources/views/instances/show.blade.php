@@ -7,10 +7,11 @@ $interfaces = $interfaces['interfaceAttachments'];
 @section('content')
 <div id="page-wrapper">
     <div class="container">
-        <h2>INTERFACE #{{ count($interfaces) }}</h2>
+        <h2>INTERFACE</h2>
         <table class="table">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>Network ID</th>
                     <th>Port ID</th>
                     <th>MAC Address</th>
@@ -19,8 +20,9 @@ $interfaces = $interfaces['interfaceAttachments'];
                 </tr>
             </thead>
             <tbody>
-                @foreach ($interfaces as $item)
+                @foreach ($interfaces as $key => $item)
                 <tr>
+                    <td>{{ $key + 1 }}</td>
                     <td>{{ $item['net_id'] }}</td>
                     <td>{{ $item['port_id'] }}</td>
                     <td>{{ $item['mac_addr'] }}</td>
