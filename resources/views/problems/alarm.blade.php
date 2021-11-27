@@ -1,10 +1,4 @@
 @extends('layouts.app')
-
-@php
-
-
-@endphp
-
 @section('content')
 <div id="page-wrapper">
     <div class="container">
