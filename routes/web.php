@@ -20,43 +20,60 @@ Route::get('/', function () {
     return view('overview',compact('limitesRegionOne','limitesRegionTwo'));
 })->name('home');
 
-Route::get('/instance/{id}', function ($id) {
+Route::get('/instance-region-one/{id}', function ($id) {
 
-    $interfaces = getAllServerInterface($id);
+    $interfaces = getAllServerInterfaceRegionOne($id);
 
     return view('instances.show',compact('interfaces'));
-})->name('server.show');
+
+})->name('server.show-region-one');
+
+Route::get('/instance-region-two/{id}', function ($id) {
+
+    $interfaces = getAllServerInterfaceRegionTwo($id);
+
+    return view('instances.show',compact('interfaces'));
+
+})->name('server.show-region-two');
 
 Route::get('/network', function () {
-    $subnets = getAllSubnets();
-    $ports = getAllPorts();
-    $networks =getAllNetworks();
+    $subnetsRegionOne = getAllSubnetsRegionOne();
+    $subnetsRegionTwo = getAllSubnetsRegionTwo();
+    $portsRegionOne = getAllPortsRegionOne();
+    $portsRegionTwo = getAllPortsRegionTwo();
+    $networksRegionOne =getAllNetworksRegionOne();
+    $networksRegionTwo =getAllNetworksRegionTwo();
 
-    return view('networks.index',compact('networks','subnets','ports'));
+    return view('networks.index',compact('subnetsRegionOne','subnetsRegionTwo','portsRegionOne','portsRegionOne','portsRegionTwo','networksRegionOne','networksRegionTwo'));
 
 })->name('network');
 
 Route::get('/instance', function () {
-    $servers = getAllServers();
+    $serversRegionOne = getAllServersRegionOne();
+    $serversRegionTwo = getAllServersRegionTwo();
 
-    return view('instances.index',compact('servers'));
+    return view('instances.index',compact('serversRegionOne','serversRegionTwo'));
 
 })->name('instance');
 
 
 Route::get('/image', function () {
-    $images = getAllImages();
+    $imagesRegionOne = getAllImagesRegionOne();
+    $imagesRegionTwo = getAllImagesRegionTwo();
 
-    return view('images.index',compact('images'));
+    return view('images.index',compact('imagesRegionOne','imagesRegionTwo'));
 
 })->name('image');
 
 
 Route::get('/storage', function () {
-    $absoluteStorage = getAllAbsoluteStorage();
-    $extensionStorage = getAllExtensionStorage();
+    $absoluteStorageRegionOne = getAllAbsoluteStorageRegionOne();
+    $extensionStorageRegionOne = getAllExtensionStorageRegionOne();
+
+    $absoluteStorageRegionTwo = getAllAbsoluteStorageRegionTwo();
+    $extensionStorageRegionTwo = getAllExtensionStorageRegionTwo();
     
-    return view('storages.index',compact('absoluteStorage','extensionStorage'));
+    return view('storages.index',compact('absoluteStorageRegionOne','extensionStorageRegionOne','absoluteStorageRegionTwo','extensionStorageRegionTwo'));
 
 })->name('storage');
 
@@ -70,9 +87,8 @@ Route::get('/alarm', function () {
 
 
 Route::get('/notification', function () {
-    $absoluteStorage = getAllAbsoluteStorage();
-    $extensionStorage = getAllExtensionStorage();
-    
-    return view('problems.notification',compact('absoluteStorage','extensionStorage'));
+ 
+   
+    return view('problems.notification');
 
 })->name('notification');
