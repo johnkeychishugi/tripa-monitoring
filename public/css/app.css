@@ -178,3 +178,8 @@ table {
     background-color: #04AA6D;
     color: white;
   }
+
+  .separate-bar{
+    border : 1px solid black;
+    opacity: 0.2
+}
