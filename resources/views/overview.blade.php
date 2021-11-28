@@ -263,12 +263,7 @@ if($ramDegRegionTwo <= 180){
     .overview-details{
         text-align: center;    
     }
-    .separate-bar{
-        border : 1px solid black;
-        opacity: 0.2
-    }
-
-
+    
     @keyframes loading-1 {
         0% {
             -webkit-transform: rotate(0deg);
